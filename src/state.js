@@ -1,11 +1,7 @@
-import {prop as initProp} from './prop'
 import {promise as initPromise} from './promise'
 
 export function state (ctx) {
   if (!ctx.resolve) {
-    if (!ctx.prop) {
-      initProp(ctx)
-    }
     initPromise(ctx)
   }
   let {prop, resolve} = ctx
