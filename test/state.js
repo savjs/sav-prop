@@ -3,7 +3,7 @@ import {expect} from 'chai'
 
 import {prop, state, promise} from '../src'
 
-test('state api', ava => {
+test('state api', ava=>{
   let ctx = {}
   state(ctx)
   expect(ctx.state).to.be.a('object')
