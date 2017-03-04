@@ -65,6 +65,7 @@ test('promise inject prop', async (ava) => {
 
 test('propPlugin', async (ava) => {
   let ctx = {
+    end () {},
     async use ({payload}) {
       await payload(ctx, async () => {
         expect(ctx.prop).to.be.a('function')
@@ -78,6 +79,7 @@ test('propPlugin', async (ava) => {
 
 test('propPlugin.body', async (ava) => {
   let ctx = {
+    end () {},
     async use ({payload}) {
       await payload(ctx, async () => {
         ctx.setState({a: 1})

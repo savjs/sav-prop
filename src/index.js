@@ -9,9 +9,7 @@ export function propPlugin (router) {
     async payload (ctx, next) {
       state(ctx)
       await next()
-      if (ctx.body === undefined) {
-        ctx.body = ctx.state
-      }
+      ctx.end(ctx.state)
     }
   })
 }
