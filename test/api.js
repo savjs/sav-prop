@@ -75,3 +75,15 @@ test('propPlugin', async (ava) => {
   }
   propPlugin(ctx)
 })
+
+test('propPlugin.body', async (ava) => {
+  let ctx = {
+    async use ({payload}) {
+      await payload(ctx, async () => {
+        ctx.setState({a: 1})
+      })
+      expect(ctx.state).to.eql({a: 1})
+    }
+  }
+  propPlugin(ctx)
+})
