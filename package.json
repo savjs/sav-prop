@@ -1,6 +1,6 @@
 {
   "name": "sav-prop",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "property inject for savjs",
   "main": "dist/sav-prop.cjs.js",
   "module": "dist/sav-prop.es.js",

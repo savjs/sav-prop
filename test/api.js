@@ -1,7 +1,7 @@
 import test from 'ava'
 import {expect} from 'chai'
 
-import {prop, promise, state} from '../src'
+import {prop, promise, state, propPlugin} from '../src'
 
 test('ensure prop export apis', ava => {
   expect(prop).to.be.a('function')
@@ -63,3 +63,15 @@ test('promise inject prop', async (ava) => {
   expect(await ctx.resolve(1)).to.equal(1)
 })
 
+test('propPlugin', async (ava) => {
+  let ctx = {
+    async use ({payload}) {
+      await payload(ctx, async () => {
+        expect(ctx.prop).to.be.a('function')
+        expect(ctx.resolve).to.be.a('function')
+        expect(ctx.setState).to.be.a('function')
+      })
+    }
+  }
+  propPlugin(ctx)
+})
