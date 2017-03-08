@@ -30,6 +30,7 @@
     "ava": "^0.18.2",
     "babel-core": "^6.23.1",
     "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.23.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "chai": "^3.5.0",
     "eslint-plugin-standard": "^2.0.1",
@@ -53,11 +54,8 @@
     "babel": "inherit"
   },
   "babel": {
-    "presets": [
-      "stage-3"
-    ],
     "plugins": [
-      "transform-decorators-legacy",
+      "transform-object-rest-spread",
       "transform-es2015-modules-commonjs"
     ]
   },
