@@ -14,11 +14,8 @@ export default {
       babelrc: false,
       externalHelpers: false,
       exclude: 'node_modules/**',
-      'presets': [
-        'stage-3'
-      ],
       'plugins': [
-        'transform-decorators-legacy'
+        ['transform-object-rest-spread', { 'useBuiltIns': true }]
       ]
     })
   ],
