@@ -29,7 +29,7 @@ export default {
   // Cleaner console
   onwarn (msg) {
     if (msg && msg.startsWith('Treating')) {
-      return
+
     }
   }
 }
